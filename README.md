@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mano_ke_Vadh
 
-## Getting Started
+### AI-Assisted Mental Health Conversation & Observation System
 
-First, run the development server:
+> A conversation-based system that helps organize a person's responses into meaningful observations, patterns, and conversational journeys for better understanding over time.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ManoMitra is a mental-health observation and conversation system designed around a simple problem:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+A doctor may have limited time with a patient, while the patient's experiences, emotions, situations, and thoughts can change throughout the days between consultations.
 
-## Learn More
+Instead of relying only on a short conversation during a consultation, ManoMitra allows a person to share their experiences through a simple conversational interface.
 
-To learn more about Next.js, take a look at the following resources:
+The system analyzes each response and extracts structured information such as:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Language structure
+- Important words
+- Temporal information
+- Conditions or reported states
+- Decisions
+- Actions
+- Causes and relationships
+- Negations
+- Other meaningful patterns
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The analyzed information is then organized into a visual response journey.
 
-## Deploy on Vercel
+The goal is **not to diagnose a person or replace a doctor**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The system is intended to organize conversational information so that important observations can be easier to review.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+# Problem Statement
+
+Mental-health conversations can contain a large amount of information:
+
+- What happened
+- When it happened
+- What the person felt
+- What caused a reaction
+- What decision was made
+- What action was taken
+- What happened afterward
+- Who was involved
+- How the situation changed
+
+During a short consultation, remembering and reviewing every detail can be difficult.
+
+A simple numerical score also cannot represent the complete context of a person's experience.
+
+For example:
+
+> "My friend ignored me during lunch, so I felt lonely and frustrated. I decided to leave college and went home."
+
+A single score cannot properly represent the relationship between:
+
+```text
+Friend ignored me
+        ↓
+Situation / Trigger
+        ↓
+Lonely
+        ↓
+Frustrated
+        ↓
+Decision
+        ↓
+Leave college
+        ↓
+Action
+        ↓
+Went home
