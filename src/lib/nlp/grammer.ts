@@ -88,7 +88,7 @@ function analyseSentence(
 
   let searchIndex = 0;
 
-  terms.forEach((term, index) => {
+  terms.forEach((term:any, index:number) => {
     const token = getSafeString(term.text, "");
 
     if (!token) {
